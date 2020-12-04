@@ -51,6 +51,12 @@ inFloodPointsScenarioField = 'Scenario'
 inFloodMask = os.path.join(Folder, r'Florida_floodmasks\Florida_floodmasks.shp')
 inFloodMaskScenarioField = 'MaskName'
 
+#Locations
+'''This assumes that the folders from the source follow this format: HawaiianIslands_floodmasks
+Also note that within each location there can be several Scenario locations, i.e. Kauai, Oahu, Maui, etc for HawaiianIslands'''
+#LocationList =['AmericanSamoa','CNMI','Florida','Guam','HawaiianIslands','PuertoRico','USVI'] #full list
+LocationList =['Guam'] 
+
 #Return Periods to create depth grids (IDW raster)
 #RPList = ['rp10','rp50','rp100','rp500'] #full list
 RPList = ['rp100'] #define your list
