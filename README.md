@@ -6,9 +6,15 @@
 	Shapefiles for seven areas
 	
 		USVI 		WGS_1984_UTM_Zone_20N
-		Puerto Rico WGS_1984_UTM_Zone_20N
+		Puerto Rico 	WGS_1984_UTM_Zone_20N
 		Guam 		WGS_1984_UTM_Zone_55n
 		CNMI		WGS_1984_UTM_Zone_55n
 		Am Samoa	WGS_1984_UTM_Zone_2S
 		Florida		WGS_1984_UTM_Zone_17N
 		Hawaii		WGS_1984_UTM_Zone_4N
+To Do
+-clean up readme
+-test output in coastal flood hazard in hazus
+-run all return periods for all locations
+-double check IDW settings
+-Enhance with elevation (add depth to DEM 10m to equal water surface; create IDW from water surface; subtract DEM from water surface IDW (positve points are flooded))
