@@ -45,11 +45,9 @@ def unique_values(table, field):  ##uses list comprehension
 #Input for manual operation
 Folder = r"C:\Users\Clindeman\OneDrive - niyamit.com\CoralReef\Data\USGS"
 
-#inFloodPoints = os.path.join(Folder, r'HawaiianIslands_floodpoints\HawaiianIslands_floodpoints.shp')
 inFloodPoints = os.path.join(Folder, r'Florida_floodpoints\Florida_floodpoints.shp')
 inFloodPointsScenarioField = 'Scenario'
 
-#inFloodPoints = os.path.join(Folder, r'HawaiianIslands_floodmasks\HawaiianIslands_floodmasks.shp')
 inFloodMask = os.path.join(Folder, r'Florida_floodmasks\Florida_floodmasks.shp')
 inFloodMaskScenarioField = 'MaskName'
 
