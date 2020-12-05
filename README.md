@@ -1,10 +1,26 @@
-# CoralReefDepthGridTool
+## To Do
+- clean up readme
+- test output in coastal flood hazard in hazus
+- run all return periods for all locations
+- Enhance with elevation (add depth to DEM 10m to equal water surface; create IDW from water surface; subtract DEM from water surface IDW (positve points are flooded))
 
-	USGS
-	Projected flooding extents and depths based on 10-, 50-, 100-, and 500-year wave-energy return periods, with and without coral reefs, for the States of Hawaii and Florida, the Territories of Guam, American Samoa, Puerto Rico, and the U.S. Virgin Islands, and the Commonwealth of the Northern Mariana Islands 
+# CoralReefDepthGridTool
+description here
+
+## Requirements
+
+The Coral Reef Depth Grid Tool requires ArcGIS 10.5.1 and python 2.7
+
+## To Use
+
+**1. Download zip folder of tool from GitHub, unzip**
+
+
+
+## Documentation
+USGS Data
 	https://www.sciencebase.gov/catalog/item/5bd77b33e4b0b3fc5ce825d8
-	Shapefiles for seven areas
-	
+	Shapefiles for seven areas:
 		USVI 		WGS_1984_UTM_Zone_20N
 		Puerto Rico 	WGS_1984_UTM_Zone_20N
 		Guam 		WGS_1984_UTM_Zone_55n
@@ -12,9 +28,10 @@
 		Am Samoa	WGS_1984_UTM_Zone_2S
 		Florida		WGS_1984_UTM_Zone_17N
 		Hawaii		WGS_1984_UTM_Zone_4N
-To Do
--clean up readme
--test output in coastal flood hazard in hazus
--run all return periods for all locations
--double check IDW settings
--Enhance with elevation (add depth to DEM 10m to equal water surface; create IDW from water surface; subtract DEM from water surface IDW (positve points are flooded))
+
+
+## Contact
+
+Issues can be reported through the repository on Github (https://github.com/nhrap-dev/Hurrevac)
+
+For questions contact hazus-support@riskmapcds.com
