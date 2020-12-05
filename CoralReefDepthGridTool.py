@@ -55,8 +55,8 @@ i.e. Kauai, Oahu, Maui, etc for HawaiianIslands'''
 LocationList =['USVI'] 
 
 #Return Periods to create depth grids (IDW raster)
-#RPList = ['rp10','rp50','rp100','rp500'] #full list
-RPList = ['rp100'] #define your list
+#ReturnPeriodList = ['rp10','rp50','rp100','rp500'] #full list
+ReturnPeriodList = ['rp100'] #define your list
 
 
 #PROCESS
@@ -70,8 +70,8 @@ for location in LocationList:
     #Check if scenarios match and if they do create an IDW raster...
     mergedList = tuple(zip(sorted(scenariosPoints), sorted(scenariosMask)))
     for x in mergedList:
-            y = x[0].split("_")#check if return period is in RPList
-            if y[1] in RPList:
+            y = x[0].split("_")#check if return period is in ReturnPeriodList
+            if y[1] in ReturnPeriodList:
                 x0 = x[0].replace("_floodpoints","")
                 x1 = x[1].replace("_floodmask","")
                 '''Maui_rp100_wrf_floodmask != Maui_rp100_wrf_floodpoints
