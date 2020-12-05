@@ -32,6 +32,6 @@ The Coral Reef Depth Grid Tool requires ArcGIS 10.5.1 and python 2.7
 
 ## Contact
 
-Issues can be reported through the repository on Github (https://github.com/nhrap-dev/Hurrevac)
+Issues can be reported through the repository on Github (https://github.com/nhrap-dev/CoralReefDepthGridTool)
 
 For questions contact hazus-support@riskmapcds.com
