@@ -13,9 +13,14 @@ The Coral Reef Depth Grid Tool requires ArcGIS 10.5.1 and python 2.7
 
 ## To Use
 
-**1. Download zip folder of tool from GitHub, unzip**
+1. Download zip folder of tool from GitHub, unzip
 
-
+2. Open the .py file with IDLE or a text editor and then modify the following variables to match your machine:
+	- arcpy.env.workspace = r"C:\temp\ScratchCoral" #set to where you want the output depthgrids (.tif) to be saved at
+	- Folder = r"C:\Users\Clindeman\OneDrive - niyamit.com\CoralReef\Data\USGS" #change this to your directory
+	- LocationList =['AmericanSamoa','CNMI','Florida','Guam','HawaiianIslands','PuertoRico','USVI'] #full list
+	- ReturnPeriodList = ['rp10','rp50','rp100','rp500'] #full list
+3. Run the script within IDLE to see the output statements and if there are any issues with the data
 
 ## Documentation
 	USGS Data
