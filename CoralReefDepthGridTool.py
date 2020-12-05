@@ -99,10 +99,8 @@ for location in LocationList:
                         arcpy.env.mask = MaskLayer
                         zField = "F_Depth" #Sould check that this exists/matches first
                         cellSize = 30
-                        power = 2
-                        searchRadius = RadiusVariable(10, 150000)
                         print("IDW", IDWGrid)
-                        outIDW = Idw(PointsLayer, zField, cellSize, power, searchRadius)
+                        outIDW = Idw(PointsLayer, zField, cellSize)
                         
                         print("Save IDW")
                         outIDW.save(IDWGrid) #should build pyramids, stats
