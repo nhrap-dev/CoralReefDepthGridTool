@@ -28,7 +28,10 @@ The Coral Reef Depth Grid Tool requires ArcGIS 10.5.1 and python 2.7
 			Am Samoa	WGS_1984_UTM_Zone_2S
 			Florida		WGS_1984_UTM_Zone_17N
 			Hawaii		WGS_1984_UTM_Zone_4N
-
+			
+Issues with the source USGS data (downloaded on 2020-12-03):
+* "HawaiianIslands_floodpoints.shp" has scenario "Molokai_rp100_wrfcsv_floodpoints", it should not have the 'csv' in it
+* "USVI_floodmasks.shp" has field 'ShpName', it should be 'MaskName'
 
 ## Contact
 
