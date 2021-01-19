@@ -16,7 +16,6 @@ print("Start")
 
 #IMPORTS
 import arcpy
-from arcpy import env
 from arcpy.sa import *
 import os
 
@@ -56,7 +55,7 @@ LocationList =['USVI']
 
 #Return Periods to create depth grids (IDW raster)
 #ReturnPeriodList = ['rp10','rp50','rp100','rp500'] #full list
-ReturnPeriodList = ['rp100'] #define your list
+ReturnPeriodList = ['rp10','rp500'] #define your list
 
 
 #PROCESS
@@ -87,23 +86,30 @@ for location in LocationList:
                     IDWGrid = x0 + ".tif" #grid format is failing, error 010240
                     
                     #iterate over each scenario, filtering the data and generating a depth grid with IDW...
-                    print("Make PointsLayer", x[0], PointsLayer)
+                    print("Make PointsLayer...", x[0], PointsLayer)
                     inFloodPointsWhereClause = '"' + inFloodPointsScenarioField + '"' + "= '" + x[0] + "'"
+                    print(inFloodPointsWhereClause)
                     arcpy.MakeFeatureLayer_management(inFloodPoints, PointsLayer, inFloodPointsWhereClause)
 
-                    print("Make MaskLayer", x[1], MaskLayer)
+                    print("Make MaskLayer...", x[1], MaskLayer)
                     inFloodMaskWhereClause = '"' + inFloodMaskScenarioField + '"' + "= '" + x[1] + "'"
+                    print(inFloodMaskWhereClause)
                     arcpy.MakeFeatureLayer_management(inFloodMask, MaskLayer, inFloodMaskWhereClause)    
 
                     try:
                         arcpy.env.mask = MaskLayer
+                        arcpy.env.cellSize = 30 
                         zField = "F_Depth" #Sould check that this exists/matches first
-                        cellSize = 30
                         print("IDW", IDWGrid)
-                        outIDW = Idw(PointsLayer, zField, cellSize)
-                        
-                        print("Save IDW")
-                        outIDW.save(IDWGrid) #should build pyramids, stats
+                        outIDW = Idw(PointsLayer, zField)
+
+                        print('Clipping to MaskLayer and saving...')
+                        rectangle = "{} {} {} {}".format(outIDW.extent.XMin, outIDW.extent.YMin, outIDW.extent.XMax, outIDW.extent.YMax)
+                        try:
+                            arcpy.Clip_management(outIDW, rectangle, IDWGrid, MaskLayer, 0, 'ClippingGeometry', 'MAINTAIN_EXTENT')
+                        except Exception as (e):
+                            print(e)
+                            
                     except Exception as (e):
                         print(e)
                     arcpy.management.Delete(PointsLayer)
